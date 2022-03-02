@@ -1,0 +1,25 @@
+﻿<Window x:Class="ComtuterService.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ComtuterService"
+        mc:Ignorable="d"
+        Title="MainMenu" Height="507" Width="779.6" ResizeMode="NoResize">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="199*"/>
+            <ColumnDefinition Width="571*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Vertical">
+            <Image Source="/Images/client.png" Margin="5,10,5,10" />
+            <Button x:Name="btncomputer" Content="Учёт Техники" HorizontalAlignment="Left" Height="45" Margin="15,10,5,10" VerticalAlignment="Top" Width="168" RenderTransformOrigin="-1.889,0.312" Click="btncomputer_Click"/>
+            <Button x:Name="btnclient" Content="Список Клиентов" HorizontalAlignment="Left" Height="45" Margin="15,10,5,10" VerticalAlignment="Top" Width="168" RenderTransformOrigin="-1.889,0.312" Click="btnclient_Click"/>
+            <Button x:Name="btnmasters" Content="Список работников сервиса" HorizontalAlignment="Left" Height="45" Margin="15,10,5,10" VerticalAlignment="Top" Width="168" RenderTransformOrigin="-1.889,0.312" Click="btnmasters_Click"/>
+            <Button x:Name="btnback" Content="Назад" Margin="15,10,17,0" Height="45" Visibility="Hidden" Click="btnback_Click"/>
+        </StackPanel>
+        <Frame Grid.Column="1" x:Name="MainMenuFrame" Source="/ComtuterService;component/PageMainMenu.xaml" NavigationUIVisibility="Hidden" ContentRendered="MainMenuFrame_ContentRendered">
+            
+        </Frame>
+    </Grid>
+</Window>
