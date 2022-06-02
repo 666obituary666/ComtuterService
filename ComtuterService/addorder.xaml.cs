@@ -19,15 +19,14 @@ namespace ComtuterService
     /// </summary>
     public partial class addorder : Window
     {
-        private entity.Orders currentOrder = new entity.Orders();
+        entity.Orders currentOrder = new entity.Orders();
         public addorder(entity.Orders selectedorder)
         {
             InitializeComponent();
-            DataContext = currentOrder;
+            DataContext = currentOrder; 
             if (selectedorder != null)
             {
                 currentOrder = selectedorder;
-                
             }
             DataContext = currentOrder;
         }
@@ -38,14 +37,12 @@ namespace ComtuterService
             {
                 entity.computerservicedbEntities.GetContext().Orders.Add(currentOrder);
                 MessageBox.Show("Информация о новом заказе добавлена!");
-                PageComputer pg = new PageComputer();
-                pg.dgcomputer.ItemsSource = entity.computerservicedbEntities.GetContext().Orders.ToList();
             }
             try
             {
-                entity.computerservicedbEntities.GetContext().SaveChanges();
-                PageComputer pg = new PageComputer();
-                pg.dgcomputer.ItemsSource = entity.computerservicedbEntities.GetContext().Orders.ToList();
+                entity.computerservicedbEntities.GetContext().SaveChanges();                
+                Manager.dgorders.ItemsSource = entity.computerservicedbEntities.GetContext().Orders.ToList();
+
             }
             catch (Exception ex)
             {

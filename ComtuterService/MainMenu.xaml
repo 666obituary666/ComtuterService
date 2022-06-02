@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ComtuterService"
         mc:Ignorable="d"
-        Title="MainMenu" Height="507" Width="779.6" ResizeMode="NoResize">
+        Title="MainMenu" Height="600" Width="800" ResizeMode="NoResize">
     <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="199*"/>
@@ -18,7 +18,7 @@
             <Button x:Name="btnmasters" Content="Список работников сервиса" HorizontalAlignment="Left" Height="45" Margin="15,10,5,10" VerticalAlignment="Top" Width="168" RenderTransformOrigin="-1.889,0.312" Click="btnmasters_Click"/>
             <Button x:Name="btnback" Content="Назад" Margin="15,10,17,0" Height="45" Visibility="Hidden" Click="btnback_Click"/>
         </StackPanel>
-        <Frame Grid.Column="1" x:Name="MainMenuFrame" Source="/ComtuterService;component/PageMainMenu.xaml" NavigationUIVisibility="Hidden" ContentRendered="MainMenuFrame_ContentRendered">
+        <Frame Grid.Column="1" Height="auto" Width="auto" x:Name="MainMenuFrame" Source="/ComtuterService;component/PageMainMenu.xaml" NavigationUIVisibility="Hidden" ContentRendered="MainMenuFrame_ContentRendered">
             
         </Frame>
     </Grid>

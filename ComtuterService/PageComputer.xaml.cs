@@ -25,6 +25,7 @@ namespace ComtuterService
         {
             InitializeComponent();
             dgcomputer.ItemsSource = entity.computerservicedbEntities.GetContext().Orders.ToList();
+            Manager.dgorders = dgcomputer;
         }
 
         private void btneditorders_Click(object sender, RoutedEventArgs e)
@@ -38,6 +39,7 @@ namespace ComtuterService
         {
             addorder addorder = new addorder(null);
             addorder.Show();
+            
         }
 
         private void btndeleteorder_Click(object sender, RoutedEventArgs e)
@@ -47,12 +49,41 @@ namespace ComtuterService
             {
                 entity.computerservicedbEntities.GetContext().Orders.Remove(orderfromremove);
                 entity.computerservicedbEntities.GetContext().SaveChanges();
-               
+                Manager.dgorders.ItemsSource = entity.computerservicedbEntities.GetContext().Orders.ToList();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void UpdComputerTable()
+        {
+            var currentComputer = computerservicedbEntities.GetContext().Orders.ToList();
+            currentComputer = currentComputer.Where(p => p.Cause.ToLower().Contains(tbSearchWork.Text.ToLower())).ToList();
+            switch (cbStatus.SelectedIndex)
+            {
+                case 0:
+                    currentComputer = currentComputer.Where(p => p.Status == "Создано").ToList();
+                    break;
+                case 1:
+                    currentComputer = currentComputer.Where(p => p.Status == "В работе").ToList();
+                    break;
+                case 2:
+                    currentComputer = currentComputer.Where(p => p.Status == "Готово к выдаче").ToList();
+                    break;
+            }
+            dgcomputer.ItemsSource = currentComputer;
+        }
+
+        private void tbSearchWork_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdComputerTable();
+        }
+
+        private void cbStatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdComputerTable();
         }
     }
 }

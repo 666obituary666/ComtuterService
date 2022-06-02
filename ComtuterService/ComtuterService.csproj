@@ -155,6 +155,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager.cs" />
     <Compile Include="PageClient.xaml.cs">
       <DependentUpon>PageClient.xaml</DependentUpon>
     </Compile>

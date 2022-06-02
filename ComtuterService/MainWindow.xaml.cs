@@ -30,8 +30,6 @@ namespace ComtuterService
         {
 
         }
-
-       
         public void ValidateUsers(string login, string password)
         {
             var userdb = entity.computerservicedbEntities.GetContext();

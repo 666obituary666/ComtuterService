@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComtuterService", "ComtuterService\ComtuterService.csproj", "{AECDD0A5-F9FC-4E66-89D8-8DA99E35E2F9}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Masters", "Masters\Masters.vdproj", "{099C182F-72A6-4594-9919-371FC9789C12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{AECDD0A5-F9FC-4E66-89D8-8DA99E35E2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AECDD0A5-F9FC-4E66-89D8-8DA99E35E2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AECDD0A5-F9FC-4E66-89D8-8DA99E35E2F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{099C182F-72A6-4594-9919-371FC9789C12}.Debug|Any CPU.ActiveCfg = Debug
+		{099C182F-72A6-4594-9919-371FC9789C12}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
